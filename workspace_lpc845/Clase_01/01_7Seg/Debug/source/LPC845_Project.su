@@ -1,0 +1,2 @@
+/Users/rok/Documents/curso-lse/workspace_lpc845/LPC845_Project/drivers/fsl_gpio.h:153:20:GPIO_PinWrite	24	static
+../source/LPC845_Project.c:13:5:main	64	static

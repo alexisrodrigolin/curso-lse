@@ -1,0 +1,12 @@
+"Task Aware Debugger for GDB" version 24.12.0 (202407110909)
+Copyright 2016-2023 NXP
+==================================
+10:24:16.763 INFO: [ZephyrRTOS] .config file could not be read [/Users/rok/Documents/curso-lse/workspace_lpc845/01_blinkynnn/Debug/.config (No such file or directory)]
+10:24:16.763 INFO: [TadModel] DSF session ID 3 has started.
+10:24:18.550 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (RESUMED, USER_REQUEST)
+10:24:18.582 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (SUSPENDED, SIGNAL)
+10:24:19.17 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (RESUMED, USER_REQUEST)
+10:24:19.96 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+10:24:22.586 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+10:24:58.128 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+10:25:00.282 INFO: [TadModel] DSF session ID 3 has ended.
