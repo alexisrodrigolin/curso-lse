@@ -1,0 +1,14 @@
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/CMSIS/Core/Include/./core_cm0plus.h:866:22:__NVIC_SetPriority	24	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/CMSIS/Core/Include/./core_cm0plus.h:1074:26:SysTick_Config	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_clock.h:569:20:CLOCK_DisableClock	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_clock.h:580:20:CLOCK_Select	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_clock.h:591:20:CLOCK_SetClkDivider	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_clock.h:601:24:CLOCK_GetClkDivider	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_gpio.h:153:20:GPIO_PinWrite	24	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_gpio.h:172:24:GPIO_PinRead	24	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_power.h:153:20:POWER_DisablePD	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_adc.h:472:20:ADC_EnableConvSeqA	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/lpc845breakout_blank_sdk/devices/LPC845/drivers/./fsl_adc.h:497:20:ADC_DoSoftwareTriggerConvSeqA	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/lpc845breakout_blank/main.c:16:6:SysTick_Handler	8	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/lpc845breakout_blank/main.c:27:5:main	64	static
