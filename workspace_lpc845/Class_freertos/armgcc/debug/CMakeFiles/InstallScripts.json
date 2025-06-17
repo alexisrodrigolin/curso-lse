@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/cmake_install.cmake",
+		"/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/freertos/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,8 @@
+{
+  "version": "25.3",
+  "toolchainPath": "/Users/rok/.mcuxpressotools/arm-gnu-toolchain-13.2.Rel1-darwin-arm64-arm-none-eabi",
+  "linkedProjects": [],
+  "trustZoneType": "none",
+  "multicoreType": "none",
+  "projectType": "cmake-freestanding"
+}

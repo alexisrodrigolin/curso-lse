@@ -1,0 +1,6 @@
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/CMakeFiles/new_project.elf.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/CMakeFiles/edit_cache.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/CMakeFiles/rebuild_cache.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/freertos/CMakeFiles/freertos.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/freertos/CMakeFiles/edit_cache.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/Class_freertos/armgcc/debug/freertos/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+/Users/rok/Documents/curso-lse/workspace_lpc845/clase_03/armgcc/debug/CMakeFiles/new_project.elf.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/clase_03/armgcc/debug/CMakeFiles/edit_cache.dir
+/Users/rok/Documents/curso-lse/workspace_lpc845/clase_03/armgcc/debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,5 @@
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/clase_03_sdk/devices/LPC845/drivers/./fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/clase_03_sdk/devices/LPC845/drivers/./fsl_clock.h:569:20:CLOCK_DisableClock	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/clase_03_sdk/devices/LPC845/drivers/./fsl_clock.h:580:20:CLOCK_Select	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/sdks/clase_03_sdk/devices/LPC845/drivers/./fsl_sctimer.h:503:20:SCTIMER_StartTimer	16	static
+/Users/rok/Documents/curso-lse/workspace_lpc845/clase_03/main.c:14:5:main	72	static

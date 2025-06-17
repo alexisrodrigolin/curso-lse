@@ -1,0 +1,33 @@
+{
+  "version": 7,
+  "cmakeMinimumRequired": {
+    "major": 3
+  },
+  "configurePresets": [
+    {
+      "name": "debug-env",
+      "displayName": "debug-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Users/rok/.mcuxpressotools/arm-gnu-toolchain-13.2.Rel1-darwin-arm64-arm-none-eabi",
+        "MCUX_VENV_PATH": "/Users/rok/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}:$penv{PATH}",
+        "SdkRootDirPath": "",
+        "POSTPROCESS_UTILITY": "/Users/rok/.mcuxpressotools/mcux-fixelf/mcux-fixelf"
+      }
+    },
+    {
+      "name": "release-env",
+      "displayName": "release-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Users/rok/.mcuxpressotools/arm-gnu-toolchain-13.2.Rel1-darwin-arm64-arm-none-eabi",
+        "MCUX_VENV_PATH": "/Users/rok/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}:$penv{PATH}",
+        "SdkRootDirPath": "",
+        "POSTPROCESS_UTILITY": "/Users/rok/.mcuxpressotools/mcux-fixelf/mcux-fixelf"
+      }
+    }
+  ],
+  "buildPresets": []
+}
