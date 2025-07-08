@@ -4,8 +4,7 @@
 xQueueHandle queue_adc;
 // Cola para datos de luminosidad
 xQueueHandle queue_lux;
-// Cola para datos del display
-xQueueHandle queue_display;
+
 // Cola para el valor de setpoint
 xQueueHandle queue_setpoint;
 
@@ -30,7 +29,6 @@ void task_init(void *params) {
 	// Inicializo colas
 	queue_adc = xQueueCreate(1, sizeof(adc_data_t));
 	queue_lux = xQueueCreate(1, sizeof(uint16_t));
-	queue_display = xQueueCreate(1, sizeof(uint16_t));
 	queue_setpoint = xQueueCreate(1, sizeof(uint16_t));
 
 	// Inicializacion de GPIO
@@ -72,31 +70,6 @@ void task_adc(void *params) {
 		ADC_DoSoftwareTriggerConvSeqA(ADC0);
 		// Bloqueo la tarea por 250 ms
 		vTaskDelay(pdMS_TO_TICKS(250));
-	}
-}
-
-/**
- * @brief Escribe valores en el display
- */
-void task_control(void *params) {
-	// Variable a mostrar
-	display_variable_t variable = kDISPLAY_TEMP;
-	// Valores de ADC
-	adc_data_t data = {0};
-	// Valor a mostrar
-	uint16_t val = 0;
-
-	while(1) {
-		// Leo los datos del ADC
-		xQueuePeek(queue_adc, &data, portMAX_DELAY);
-		// Veo cual tengo que mostrar
-		val = (variable == kDISPLAY_TEMP)? data.temp_raw : data.ref_raw;
-		val = 30 * val / 4095;
-
-		xQueueOverwrite(queue_display, &val);
-
-
-		vTaskDelay(pdMS_TO_TICKS(50));
 	}
 }
 

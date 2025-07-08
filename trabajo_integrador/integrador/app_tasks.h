@@ -17,7 +17,6 @@
 #define tskINIT_PRIORITY					(tskIDLE_PRIORITY + 3UL)
 #define tskADC_PRIORITY						(tskIDLE_PRIORITY + 1UL)
 
-#define tskCONTROL_PRIORITY					(tskIDLE_PRIORITY + 1UL)
 #define tskDISPLAY_PRIORITY					(tskIDLE_PRIORITY + 1UL)
 #define tskPWM_PRIORITY						(tskIDLE_PRIORITY + 1UL)
 #define tskBH1750_PRIORITY					(tskIDLE_PRIORITY + 1UL)
@@ -31,7 +30,6 @@
 #define tskINIT_STACK					(3 * configMINIMAL_STACK_SIZE)
 #define tskADC_STACK					(configMINIMAL_STACK_SIZE)
 
-#define tskCONTROL_STACK				(configMINIMAL_STACK_SIZE)
 #define tskDISPLAY_STACK				(3 * configMINIMAL_STACK_SIZE / 2)
 #define tskPWM_STACK					(3 * configMINIMAL_STACK_SIZE / 2)
 #define tskBH1750_STACK					(2 * configMINIMAL_STACK_SIZE)
@@ -47,7 +45,6 @@ extern TaskHandle_t handle_display;
 // Prototipos de funciones
 void task_init(void *params);
 void task_adc(void *params);
-void task_control(void *params);
 void task_display(void *params);
 void task_pwm(void *params);
 void task_bh1750(void *params);
