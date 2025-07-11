@@ -25,6 +25,7 @@
 #define tskBUZZER_PRIORITY					(tskIDLE_PRIORITY + 2UL)
 #define tskCOUNTER_BTNS_PRIORITY			(tskIDLE_PRIORITY + 2UL)
 #define tskUSR_PRIORITY			            (tskIDLE_PRIORITY + 2UL)
+#define tskTRICOLOUR_PRIORITY			    (tskIDLE_PRIORITY + 2UL)
 #define tskTIMER_PRIORITY                   (tskIDLE_PRIORITY + 1UL)
 
 // Stacks para tareas
@@ -39,6 +40,7 @@
 #define tskBH1750_STACK					(2 * configMINIMAL_STACK_SIZE)
 #define tskBUZZER_STACK					(configMINIMAL_STACK_SIZE)
 #define tskUSR_STACK					(configMINIMAL_STACK_SIZE)
+#define tskTRICOLOUR_STACK				(2 * configMINIMAL_STACK_SIZE)
 #define tskCOUNTER_STACK				(configMINIMAL_STACK_SIZE)
 #define tskCOUNTER_BTNS_STACK			(configMINIMAL_STACK_SIZE)
 #define tskTIMER_STACK					(3* configMINIMAL_STACK_SIZE)
@@ -56,6 +58,7 @@ void task_usr(void *params);
 void task_pwm(void *params);
 void task_bh1750(void *params);
 void task_buzzer(void *params);
+void task_tricolour(void *params);
 void task_counter_btns(void *params);
 void task_ShowValues(void *params);
 /**
