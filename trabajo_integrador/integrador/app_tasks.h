@@ -18,14 +18,14 @@
 #define tskADC_PRIORITY						(tskIDLE_PRIORITY + 1UL)
 
 #define tskDISPLAY_PRIORITY					(tskIDLE_PRIORITY + 1UL)
-#define tskDISPLAY_CHANGE_PRIORITY			(tskIDLE_PRIORITY + 2UL)
+#define tskDISPLAY_CHANGE_PRIORITY			(tskIDLE_PRIORITY + 1UL)
 #define tskPWM_PRIORITY						(tskIDLE_PRIORITY + 1UL)
 #define tskBH1750_PRIORITY					(tskIDLE_PRIORITY + 1UL)
 #define tskBLINKY_PRIORITY					(tskIDLE_PRIORITY + 1UL)
 #define tskBUZZER_PRIORITY					(tskIDLE_PRIORITY + 2UL)
 #define tskCOUNTER_BTNS_PRIORITY			(tskIDLE_PRIORITY + 2UL)
-#define tskUSR_PRIORITY			            (tskIDLE_PRIORITY + 2UL)
-#define tskTRICOLOUR_PRIORITY			    (tskIDLE_PRIORITY + 2UL)
+#define tskUSR_PRIORITY			            (tskIDLE_PRIORITY + 1UL)
+#define tskTRICOLOUR_PRIORITY			    (tskIDLE_PRIORITY + 1UL)
 #define tskTIMER_PRIORITY                   (tskIDLE_PRIORITY + 1UL)
 
 // Stacks para tareas
@@ -40,7 +40,7 @@
 #define tskBH1750_STACK					(2 * configMINIMAL_STACK_SIZE)
 #define tskBUZZER_STACK					(configMINIMAL_STACK_SIZE)
 #define tskUSR_STACK					(configMINIMAL_STACK_SIZE)
-#define tskTRICOLOUR_STACK				(2 * configMINIMAL_STACK_SIZE)
+#define tskTRICOLOUR_STACK				(3 * configMINIMAL_STACK_SIZE)
 #define tskCOUNTER_STACK				(configMINIMAL_STACK_SIZE)
 #define tskCOUNTER_BTNS_STACK			(configMINIMAL_STACK_SIZE)
 #define tskTIMER_STACK					(3* configMINIMAL_STACK_SIZE)

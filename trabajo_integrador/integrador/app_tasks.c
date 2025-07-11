@@ -83,14 +83,16 @@ void task_adc(void *params) {
  */
 void task_display(void *params) {
 	// Variable con el dato para escribir
-	uint8_t data;
+	uint16_t data;
 	bool control = false;
 	while(1) {
 		// Mira el dato que haya en la cola
-		if(!xQueuePeek(queue_display_control, &data, pdMS_TO_TICKS(100))) { continue; }	
+		xQueuePeek(queue_display_control, &control, pdMS_TO_TICKS(100));
 		if(control){
-			if(!xQueuePeek(queue_setpoint, &data, pdMS_TO_TICKS(100))) { continue; }
-		} else {if(!xQueuePeek(queue_lux, &data, pdMS_TO_TICKS(100))) { continue; }}
+			xQueuePeek(queue_setpoint, &data, pdMS_TO_TICKS(100));
+		} 
+		else {
+			xQueuePeek(queue_lux, &data, pdMS_TO_TICKS(100));}
 		// Muestro el número
 		wrapper_display_off();
 		wrapper_display_write((uint8_t)(data / 10), control);
@@ -129,14 +131,14 @@ void task_pwm(void *params) {
 
 void task_tricolour(void *params) {
 	// Variable para guardar los datos del ADC
-	uint8_t lux;
-	uint8_t setpoint;
+	uint16_t data;
+	uint16_t setpoint;
 
 	while(1) {
 		// Bloqueo hasta que haya algo que leer
-		xQueuePeek(queue_lux, &lux, portMAX_DELAY);
+		xQueuePeek(queue_lux, &data, portMAX_DELAY);
 		xQueuePeek(queue_setpoint, &setpoint, portMAX_DELAY);
-		int8_t err = lux - setpoint;
+		int16_t err = data - setpoint;
 		// Actualizo el duty
 		if(err >0) {
 			// Referencia por arriba, quiero calentar -> LED rojo
@@ -180,7 +182,7 @@ void task_display_change(void *params) {
 
 	while(1) {
 		xSemaphoreTake(semphr_usr, portMAX_DELAY);
-		if(!xQueuePeek(queue_display_control, &status, pdMS_TO_TICKS(100))) { continue; }
+		xQueuePeek(queue_display_control, &status, pdMS_TO_TICKS(100));
 		// Escribe el dato en la cola
 		bool new_status = !status;
 		xQueueOverwrite(queue_display_control, &new_status);
@@ -251,10 +253,10 @@ void task_counter_btns(void *params) {
 			xSemaphoreGive(semphr_counter);
 		}
 		// Escribe en el display
-		uint16_t data = uxSemaphoreGetCount(semphr_counter);
+		uint16_t data = uxSemaphoreGetCount(semphr_counter) + 25;
 		xQueueOverwrite(queue_setpoint, &data);
 		// Demora chica para evitar que detecte muy rápido que se presionó
-		vTaskDelay(pdMS_TO_TICKS(30));
+		vTaskDelay(pdMS_TO_TICKS(100));
 
 	}
 }
@@ -274,7 +276,7 @@ void task_ShowValues(void *params){
 		
 		PRINTF("Ticks: %ld ms\n", tiempo_ms);
 		PRINTF("El porcentaje luminico es: %d\n", porcentaje);
-		PRINTF("El porcentaje del setpoint es: %d\n", control+25);
+		PRINTF("El porcentaje del setpoint es: %d\n", control);
 		PRINTF("El porcentaje del brillo del LED D1: %d\n", duty);
 
 		vTaskDelay(500);
