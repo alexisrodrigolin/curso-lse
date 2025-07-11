@@ -14,9 +14,6 @@ if(CMAKE_SCRIPT_MODE_FILE)
 endif()
 
 
-set(CMAKE_STATIC_LIBRARY_PREFIX)
-set(CMAKE_STATIC_LIBRARY_SUFFIX)
-
 set(CMAKE_EXECUTABLE_LIBRARY_PREFIX)
 set(CMAKE_EXECUTABLE_LIBRARY_SUFFIX)
 
@@ -44,24 +41,25 @@ include(${ProjDirPath}/flags.cmake)
 include(${ProjDirPath}/config.cmake)
 
 add_executable(${MCUX_SDK_PROJECT_NAME} 
-    "${ProjDirPath}/../main.c"
-    "${ProjDirPath}/../board.h"
-    "${ProjDirPath}/../board.c"
-    "${ProjDirPath}/../clock_config.h"
-    "${ProjDirPath}/../clock_config.c"
-    "${ProjDirPath}/../mcux_config.h"
-    "${ProjDirPath}/../wrappers.h"
-    "${ProjDirPath}/../wrappers.c"
-    "${ProjDirPath}/../app_tasks.h"
-    "${ProjDirPath}/../app_tasks.c"
-    "${ProjDirPath}/../labels.h"
-    "${ProjDirPath}/../isr.c"
-    "${ProjDirPath}/../isr.h"
+"${ProjDirPath}/../main.c"
+"${ProjDirPath}/../board.h"
+"${ProjDirPath}/../board.c"
+"${ProjDirPath}/../clock_config.h"
+"${ProjDirPath}/../clock_config.c"
+"${ProjDirPath}/../mcux_config.h"
+"${ProjDirPath}/../app_tasks.h"
+"${ProjDirPath}/../app_tasks.c"
+"${ProjDirPath}/../isr.h"
+"${ProjDirPath}/../isr.c"
+"${ProjDirPath}/../labels.h"
+"${ProjDirPath}/../wrappers.h"
+"${ProjDirPath}/../wrappers.c"
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${ProjDirPath}/..
 )
+
 
 include(${SdkRootDirPath}/devices/LPC845/all_lib_device.cmake)
 

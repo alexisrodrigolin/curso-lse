@@ -4,16 +4,7 @@
  * @brief Callback para interrupción por flancos del infrarojo
  * @param pintr numero de interrupción
  */
-void cny70_callback(pint_pin_int_t pintr, uint32_t pmatch_status) {
-	// Tarea de prioridad alta?
-	int32_t higher_task = 0;
-	// Doy el semáforo para la tarea
-	xSemaphoreGiveFromISR(semphr_buzz, &higher_task);
-	// Limpio flag de interrupción
-	PINT_PinInterruptClrStatus(PINT, pintr);
-	// Retorno a tarea de alta prioridad
-	portYIELD_FROM_ISR(higher_task);
-}
+
 
 
 /**

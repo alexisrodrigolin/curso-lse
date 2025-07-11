@@ -21,6 +21,7 @@
 #define SEG_E	GPIO, 0, 0
 #define SEG_F	GPIO, 0, 13
 #define SEG_G	GPIO, 0, 15
+#define SEG_DP	GPIO, 0, 0
 #define COM_1	GPIO, 0, 8
 #define COM_2	GPIO, 0, 9
 

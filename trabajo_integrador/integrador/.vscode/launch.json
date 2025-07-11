@@ -5,27 +5,23 @@
       "name": "Debug",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-    
-      "executable": "",
+      "executable": {
+        "elf": ""
+      },
       "stopAtSymbol": "main",
-      "probeSerialNumber": "0F00E01F",
+      "probeSerialNumber": "0F016038",
       "isAttach": false,
-      "probeType": "",
       "skipBuildBeforeDebug": false,
-      "skipPreFlashActions": true,
-    
       "gdbInitCommands": [
         "set remotetimeout 600",
         "set debug-file-directory",
         "set non-stop off"
       ],
-    
       "gdbServerConfigs": {
         "linkserver": {},
-    		"segger": {},
-    		"pemicro": {}
+        "segger": {},
+        "pemicro": {}
       },
-    
       "showDevDebugOutput": "none"
     }
   ]

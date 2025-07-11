@@ -62,23 +62,6 @@ void wrapper_btn_init(void) {
 }
 
 /**
- * @brief Wrapper para habilitar una interrupción en una entrada
- * @param gpio estructura de GPIO
- * @param edge kPINT_PinIntEnableRiseEdge, kPINT_PinIntEnableFallEdge, kPINT_PinIntEnableBothEdges
- */
-void wrapper_gpio_enable_irq(gpio_t gpio, pint_pin_enable_t edge, pint_cb_t callback) {
-	// Variable para guardar el numero de interrupción
-	static uint32_t pint_n = 0;
-	// Solo la primera vez que se configura la interrupción
-	if(pint_n == 0) { PINT_Init(PINT); }
-	// Asigno el pin a la interrupción
-	SYSCON->PINTSEL[pint_n] = wrapper_gpio_get_pin(gpio);
-	// PINT interrupt para el flanco indicado
-	PINT_PinInterruptConfig(PINT, (pint_pin_int_t)pint_n, edge, callback);
-	PINT_EnableCallbackByIndex(PINT, (pint_pin_int_t)pint_n++);
-}
-
-/**
  * @brief Wrapper para inicializacion del display 7 segmentos
  */
 void wrapper_display_init(void) {
@@ -94,15 +77,25 @@ void wrapper_display_init(void) {
  * @brief Escribe el numero de un digito en el display
  * @param number es el numero que se quiere escribir
  */
-void wrapper_display_write(uint8_t number) {
-	// Array con valores para los pines
-	uint8_t values[] = { ~0x3f, ~0x6, ~0x5b, ~0x4f, ~0x66, ~0x6d, ~0x7d, ~0x7, ~0x7f, ~0x6f };
-	// Array con los segmentos
-	gpio_t pins[] = { {SEG_A}, {SEG_B}, {SEG_C}, {SEG_D}, {SEG_E}, {SEG_F}, {SEG_G} };
+void wrapper_display_write(uint8_t number, bool show_dp) {
+	// Valores sin invertir (cátodo común)
+	uint8_t raw_values[] = { 
+		0x3f, 0x06, 0x5b, 0x4f, 0x66, 
+		0x6d, 0x7d, 0x07, 0x7f, 0x6f 
+	};
 
-	for(uint8_t i = 0; i < sizeof(pins) / sizeof(gpio_t); i++) {
-		// Escribo el valor del bit en el segmento que corresponda
-		uint32_t val = (values[number] & (1 << i))? 1 : 0;
+	// Agregar el DP si se quiere mostrar
+	if (show_dp) {
+		raw_values[number] |= 0x80;  // bit 7 = 1 antes de invertir
+	}
+
+	// Invertimos para ánodo común
+	uint8_t value = ~raw_values[number];
+
+	gpio_t pins[] = { {SEG_A}, {SEG_B}, {SEG_C}, {SEG_D}, {SEG_E}, {SEG_F}, {SEG_G}, {SEG_DP} };
+
+	for (uint8_t i = 0; i < 8; i++) {
+		uint32_t val = (value & (1 << i)) ? 1 : 0;
 		GPIO_PinWrite(GPIO_DESTRUCT(pins[i]), val);
 	}
 }
@@ -183,12 +176,14 @@ void wrapper_pwm_update_bled(int16_t duty) {
 	// Invoco al wrapper general
 	wrapper_pwm_update_led(kSCTIMER_Out_0, duty, pwm_bled_event);
 }
-//Mine
 
 /**
  * @brief Wrapper para actualizar el valor de duty del PWM del LED rojo
  */
-
+void wrapper_pwm_update_rled(int16_t duty) {
+	// Invoco al wrapper general
+	wrapper_pwm_update_led(kSCTIMER_Out_1, duty, pwm_rled_event);
+}
 
 /**
  * @brief Wrapper que inicializa el I2C

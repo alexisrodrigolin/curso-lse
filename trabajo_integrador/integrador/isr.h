@@ -7,9 +7,4 @@
 // Semaforos y colas externas
 
 extern xQueueHandle queue_adc;
-extern xSemaphoreHandle semphr_buzz;
 
-
-// Prototipos de callbacks
-
-void cny70_callback(pint_pin_int_t pintr, uint32_t pmatch_status);

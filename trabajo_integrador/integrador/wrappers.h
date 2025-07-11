@@ -27,11 +27,11 @@ typedef struct {
 // Prototipos
 void wrapper_adc_init(void);
 void wrapper_btn_init(void);
-void wrapper_gpio_enable_irq(gpio_t gpio, pint_pin_enable_t edge, pint_cb_t callback);
 void wrapper_display_init(void);
-void wrapper_display_write(uint8_t number);
+void wrapper_display_write(uint8_t number, bool show_dp);
 void wrapper_pwm_init(void);
 void wrapper_pwm_update_bled(int16_t duty);
+void wrapper_pwm_update_rled(int16_t duty);
 void wrapper_i2c_init(void);
 void wrapper_bh1750_init(void);
 float wrapper_bh1750_read(void);
@@ -126,7 +126,7 @@ static inline void wrapper_display_on_both(void) {
  */
 static inline void wrapper_display_segments_off(void) {
 	// Pongo un uno en cada segmento
-	gpio_t pins[] = { {SEG_A}, {SEG_B}, {SEG_C}, {SEG_D}, {SEG_E}, {SEG_F}, {SEG_G} };
+	gpio_t pins[] = { {SEG_A}, {SEG_B}, {SEG_C}, {SEG_D}, {SEG_E}, {SEG_F}, {SEG_G},{SEG_DP}  };
 	for(uint8_t i = 0; i < sizeof(pins) / sizeof(gpio_t); i++) {
 		GPIO_PinWrite(GPIO_DESTRUCT(pins[i]), 1);
 	}

@@ -1,0 +1,35 @@
+{
+  "version": 7,
+  "cmakeMinimumRequired": {
+    "major": 3
+  },
+  "configurePresets": [
+    {
+      "name": "debug-env",
+      "displayName": "debug-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Users/rok/.mcuxpressotools/arm-gnu-toolchain-13.2.Rel1-darwin-arm64-arm-none-eabi",
+        "SdkRootDirPath": "/Users/rok/Documents/curso-lse/trabajo_integrador/sdks/integrador_sdk",
+        "POSTPROCESS_UTILITY": "/Users/rok/.mcuxpressotools/mcux-fixelf/mcux-fixelf",
+        "MCUX_VENV_PATH": "/Users/rok/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}${pathListSep}$penv{PATH}"
+      },
+      "cacheVariables": {}
+    },
+    {
+      "name": "release-env",
+      "displayName": "release-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Users/rok/.mcuxpressotools/arm-gnu-toolchain-13.2.Rel1-darwin-arm64-arm-none-eabi",
+        "SdkRootDirPath": "/Users/rok/Documents/curso-lse/trabajo_integrador/sdks/integrador_sdk",
+        "POSTPROCESS_UTILITY": "/Users/rok/.mcuxpressotools/mcux-fixelf/mcux-fixelf",
+        "MCUX_VENV_PATH": "/Users/rok/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}${pathListSep}$penv{PATH}"
+      },
+      "cacheVariables": {}
+    }
+  ],
+  "buildPresets": []
+}

@@ -1,0 +1,6 @@
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/CMakeFiles/new_project.elf.dir
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/CMakeFiles/edit_cache.dir
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/CMakeFiles/rebuild_cache.dir
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/freertos/CMakeFiles/freertos.dir
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/freertos/CMakeFiles/edit_cache.dir
+/Users/rok/Documents/curso-lse/trabajo_integrador/integrador/armgcc/debug/freertos/CMakeFiles/rebuild_cache.dir
