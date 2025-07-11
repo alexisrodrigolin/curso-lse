@@ -1,4 +1,0 @@
-/Users/rok/Documents/curso-lse/trabajo_integrador/sdks/lpcintegrador_sdk/devices/LPC845/drivers/./fsl_adc.h:770:24:ADC_GetStatusFlags	16	static
-/Users/rok/Documents/curso-lse/trabajo_integrador/sdks/lpcintegrador_sdk/devices/LPC845/drivers/./fsl_adc.h:781:20:ADC_ClearStatusFlags	16	static
-/Users/rok/Documents/curso-lse/trabajo_integrador/lpcintegrador/isr.c:7:6:cny70_callback	24	static
-/Users/rok/Documents/curso-lse/trabajo_integrador/lpcintegrador/isr.c:22:6:ADC0_SEQA_IRQHandler	56	static
